@@ -9,3 +9,7 @@ https://www.quandl.com/blog/interview-with-a-quant-part-one
 - Due: 16/3/9
 - Discussion is recommended but you should write your own codes.
 
+
+### NumPy Quickstart Tutorial
+
+https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
