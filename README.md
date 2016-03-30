@@ -9,6 +9,8 @@ https://www.quandl.com/blog/interview-with-a-quant-part-one
 - Due: 16/3/9
 - Discussion is recommended but you should write your own codes.
 
+## HW2 uploaded
+- Due: 16/3/26 12:00PM
 
 ### NumPy Quickstart Tutorial
 
