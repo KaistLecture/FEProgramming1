@@ -65,7 +65,7 @@ names = ['evalDate', 'underlying', 'riskfree', 'dividend', 'volatility']
 
 while True:
     method = input("List (1) or NumPy (2) = ")
-    if method=='1':   fun = mcprice; break
+    if method=='1':  fun = mcprice;  break
     elif method=='2': fun = mcprice_numpy; break
     else: print("Wrong input")
 
@@ -86,3 +86,10 @@ for i in range(6,len(info)):
     print('{0:3s}{1:6s}{2:^8s}{3:10s}{4:>12.4f}{5:>12.4f}'.format(c[0],optionType,c[2],mat.strftime("%y/%b/%d"),price1,price2))
 print('='*n)
 print("computation time = %0.2fsec."%(time.time() - t0))
+
+#%%
+print(10)
+
+#%%
+print(20)
+
