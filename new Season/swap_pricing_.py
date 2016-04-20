@@ -24,8 +24,7 @@ def spotRate(date, yieldCurve):
     days = (date-today).days
     return yieldCurve(days)
 def df(date, yieldCurve):
-    return math.exp(-spotRate(date,yieldCurve) 
-    * act365(today,date))        
+    return math.exp(-spotRate(date,yieldCurve) * act365(today,date))        
 def fwdRate(date1, date2, daycounter, yieldCurve):
     return 1/daycounter(date1,date2)*(df(date1,yieldCurve) / df(date2,yieldCurve) -1)
     
@@ -53,7 +52,7 @@ def irs_pricing(today, swaptype, notional, effectiveDate, terminationDate,
                     while d1<=terminationDate:
                         if d1>today:
                             rate = lastFixing if d<today else fwdRate(d,d1,floatingDC,yieldCurve)
-                            cf = notional * floatingDC(d,d1) * rate  
+                            cf = notional * floatingDC(d,d1) * (rate+spread)
                             floatingCF.append([d1, cf])
                             npv += cf * df(d1, yieldCurve)
                         d = d1
