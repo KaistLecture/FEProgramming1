@@ -12,12 +12,31 @@ for i in range(N):
 Prob = s/N
 pi = Prob * 4
 print(pi)
-
+'''
 #%%
 import random
+import numpy as np
 
 N = 100000
 count = 0
+r = np.random.random((N,2))
+#x: min value
+#y: max value
+x1 = r.min(axis = 1)
+x2 = 1 - r.max(axis=1)
+x3 = r.max(axis=1) - r.min(axis=1)
+x = np.vstack((x1,x2,x3))
+mx = x.max(axis=0)
+i = mx < 0.5
+print("{0:.4%}".format(i.sum()/N))
+
+p = r[i,0:2]
+import matplotlib.pyplot as plt
+plt.scatter(p[:,0],p[:,1],marker='.')
+plt.show()
+
+
+'''
 for i in range(N):
     x = random.random()
     y = random.random()
@@ -32,7 +51,8 @@ for i in range(N):
 
 prob = count/N
 print(prob)
-    '''
+
+
 #%%
 import math
 number = "02-769-3937"
@@ -55,7 +75,6 @@ def calcLength(number):
 
 calcLength(number)
 
-'''
 for i in range(len(n)-1):
     s = n[i]
     e = n[i+1]
