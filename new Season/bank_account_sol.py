@@ -44,5 +44,30 @@ Rstr = ["{0:.5%}".format(r) for r in R]
 print(Rstr)
 plt.plot(i,R,'s-')
 
+b = np.array([100,50]).reshape((2,1))
+a1 = [np.exp(0.1+0.11), np.exp(0.1+0.09)]
+a1 = np.array(a1).reshape((2,1))
+
+a1 = np.ones((2,1))*np.exp(0.1)*np.exp(
+np.array([0.11,0.09])).reshape(2,1)
+a2 = np.ones((2,1))*np.exp(R[1]*2)
+A = np.hstack([a1,a2])
+
+x = np.linalg.inv(A).dot(b)
+price = x.sum()
+
+price2 = (100*np.exp(
+-0.11)*0.6 + 50*np.exp(-0.09)*0.4)*np.exp(-0.1)
+
+print(price)
+print(price2)
+
+
+
+
+
+
+
+
 
 
