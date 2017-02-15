@@ -6,5 +6,6 @@ for i in fl:
     f = open(i,'r')
     d = f.readlines()
     data.append([j.rstrip("\n").split(",") for j in d])
-
+    f.close()
+    
         
