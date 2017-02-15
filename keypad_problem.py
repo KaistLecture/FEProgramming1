@@ -1,25 +1,33 @@
 from math import sqrt
 
 #k = {1:(0,0), 2:(0,1), 3:(0,2) .....}
+def calcDist(number, initialDist=0):
+    k = {}
+    c = 0
+    for i in range(3):
+        for j in range(3):
+            c += 1
+            k[c] = (i,j)
+    k[0] = (3,1)
+    
+    n = number.replace("-", "")
+    
+    dist = initialDist
+    for i in range(len(n)-1):
+        p0 = k[int(n[i])]
+        p1 = k[int(n[i+1])]
+        dist += sqrt((p0[0]-p1[0])**2 + (p0[1]-p1[1])**2)
+    
+    #print("Distance = %.3f" % dist)
+    return {"number":n, "distance":dist}
 
-k = {}
-c = 0
-for i in range(3):
-    for j in range(3):
-        c += 1
-        k[c] = (i,j)
-k[0] = (3,1)
+a = calcDist("02-769-3937")
+b = calcDist("01012345678", 10)
+#print("{} and {}".format(n1,n2))
+#print("{} and {}".format(a,b))
+print(a["number"],a["distance"])
+print(b["number"],b["distance"])
 
-number = "02-769-3937"
-n = number.replace("-", "")
-
-dist = 0
-for i in range(len(n)-1):
-    p0 = k[int(n[i])]
-    p1 = k[int(n[i+1])]
-    dist += sqrt((p0[0]-p1[0])**2 + (p0[1]-p1[1])**2)
-
-print("Distance = %.3f" % dist)
 
 
 
