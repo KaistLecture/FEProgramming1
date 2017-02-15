@@ -21,12 +21,16 @@ def calcDist(number, initialDist=0):
     #print("Distance = %.3f" % dist)
     return {"number":n, "distance":dist}
 
-a = calcDist("02-769-3937")
-b = calcDist("01012345678", 10)
-#print("{} and {}".format(n1,n2))
-#print("{} and {}".format(a,b))
-print(a["number"],a["distance"])
-print(b["number"],b["distance"])
+
+if __name__=="__main__":    
+    num = "123456789"
+    a = calcDist(num)
+    b = calcDist(num)
+    
+    #print("{} and {}".format(n1,n2))
+    #print("{} and {}".format(a,b))
+    print(a["number"],a["distance"])
+    print(b["number"],b["distance"])
 
 
 
