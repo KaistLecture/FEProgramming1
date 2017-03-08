@@ -29,14 +29,14 @@ if __name__=="__main__":
     matdate = datetime.datetime(2026,2,15)
     ytm = 0.03
     freq = 4
-    couponRate = 0.04
-    temp = bondprice(today, issuedate, matdate, freq, couponRate, ytm)
+    couponrate = 0.04
+    temp = bondprice(today, issuedate, matdate, freq, couponrate, ytm)
     print(temp)
 
     import matplotlib.pyplot as plt
     import numpy as np
     yields = np.linspace(0.01, 0.1, 10)
-    prices = [bondprice(today, issuedate, matdate, freq, couponRate, y) for y in yields]
+    prices = [bondprice(today, issuedate, matdate, freq, couponrate, y) for y in yields]
     plt.plot(yields, prices, '-o')
     plt.show()
 

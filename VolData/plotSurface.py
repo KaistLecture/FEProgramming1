@@ -26,7 +26,7 @@ for i, f in enumerate(fname):
     X, Y, Z = X[idx], Y[idx], Z[idx]
     
     ax.plot_wireframe(X,Y,Z)
-    ax.plot_surface(X,Y,Z,rstride=1,cstride=1,cmap=cm.coolwarm)
+    #ax.plot_surface(X,Y,Z,rstride=1,cstride=1,cmap=cm.coolwarm)
     ax.view_init(10,300)
     ax.set_title(f.rstrip('.csv'))
     ax.set_xlabel('moneyness')
